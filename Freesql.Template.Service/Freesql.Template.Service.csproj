@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DMS.Auth" Version="1.2.6.3" />
+    <PackageReference Include="DMS.NLogs" Version="1.4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Freesql.Template.Contracts\Freesql.Template.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>
