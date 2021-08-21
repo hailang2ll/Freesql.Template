@@ -9,10 +9,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Freesql.Template.Contracts.xml" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\Freesql.Template.Entities\Freesql.Template.Entities.csproj" />
   </ItemGroup>
 
