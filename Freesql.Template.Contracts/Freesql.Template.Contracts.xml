@@ -1,0 +1,157 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Freesql.Template.Contracts</name>
+    </assembly>
+    <members>
+        <member name="T:Freesql.Template.Contracts.ISysJobLogService">
+            <summary>
+            日志接口定义
+            </summary>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.AddAsync(Freesql.Template.Contracts.Param.AddJobLogParam)">
+            <summary>
+            异步新增
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.AddTranAsync(Freesql.Template.Contracts.Param.AddJobLogParam)">
+            <summary>
+            事物处理
+            </summary>
+            <param name="param"></param>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.UpdateAsync(System.Int64)">
+            <summary>
+            异步修改
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.DeleteAsync(System.Int64)">
+            <summary>
+            异步删除
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.GetJobLogAsync(System.Int64)">
+            <summary>
+            异步查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.GetJobLogListAsync(System.Int64)">
+            <summary>
+            异步查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:Freesql.Template.Contracts.ISysJobLogService.SearchJobLogAsync(Freesql.Template.Contracts.Param.SearchJobLogParam)">
+            <summary>
+            异步查询
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:Freesql.Template.Contracts.Param.AddJobLogParam">
+            <summary>
+            添加工作日志
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.CreateTime">
+            <summary>
+            任务时间
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.JobLogType">
+            <summary>
+            任务类型
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.Message">
+            <summary>
+            猪血消息
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.Name">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.ServerIP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.AddJobLogParam.TaskLogType">
+            <summary>
+            任务类型
+            </summary>
+        </member>
+        <member name="T:Freesql.Template.Contracts.Param.SearchJobLogParam">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.SearchJobLogParam.JobLogType">
+            <summary>
+            工作类型
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.SearchJobLogParam.Message">
+            <summary>
+            任务消息
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.SearchJobLogParam.Name">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Param.SearchJobLogParam.TaskLogType">
+            <summary>
+            任务类型
+            </summary>
+        </member>
+        <member name="T:Freesql.Template.Contracts.Result.JobLogResult">
+            <summary>
+            返回实体
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.JobLogID">
+            <summary>
+            任务ID
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.CreateTime">
+            <summary>
+            任务时间
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.JobLogType">
+            <summary>
+            任务类型
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.Message">
+            <summary>
+            任务消息
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.Name">
+            <summary>
+            任务名称
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.ServerIP">
+            <summary>
+            IP
+            </summary>
+        </member>
+        <member name="P:Freesql.Template.Contracts.Result.JobLogResult.TaskLogType">
+            <summary>
+            任务类型
+            </summary>
+        </member>
+    </members>
+</doc>
