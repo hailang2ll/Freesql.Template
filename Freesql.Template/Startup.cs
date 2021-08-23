@@ -4,6 +4,7 @@ using DMS.NLogs.Filters;
 using DMS.Redis.Configurations;
 using DMS.Swagger;
 using DMSN.Common.Configurations;
+using DMSN.Common.Helper;
 using DMSN.Common.JsonHandler.JsonConverters;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -88,9 +89,7 @@ namespace Freesql.Template
                 options.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-#if DEBUG
             services.AddSwaggerGenV2();
-#endif
 
             #region AddDbContext
             services.AddSingleton<IFreeSql>(Fsql);
@@ -108,10 +107,8 @@ namespace Freesql.Template
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwaggerUIV2(DebugHelper.IsDebug(GetType()));
             }
-#if DEBUG
-            app.UseSwaggerUIV2();
-#endif
             app.UseStaticHttpContext();
 
 
