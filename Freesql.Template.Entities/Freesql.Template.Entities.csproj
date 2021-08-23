@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DMSN.Common" Version="3.2.7.5" />
+    <PackageReference Include="DMSN.Common" Version="3.2.7.7" />
     <PackageReference Include="FreeSql.Provider.MySql" Version="2.5.200" />
   </ItemGroup>
 
