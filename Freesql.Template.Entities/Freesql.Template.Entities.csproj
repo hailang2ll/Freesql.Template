@@ -5,8 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="DMSN.Common" Version="3.2.7.7" />
-    <PackageReference Include="FreeSql.Provider.MySql" Version="2.5.200" />
+    <PackageReference Include="DMSN.Common" Version="3.5.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Freesql.Template.Extensions\Freesql.Template.Extensions.csproj" />
   </ItemGroup>
 
 </Project>

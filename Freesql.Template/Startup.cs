@@ -1,23 +1,20 @@
 using Autofac;
+using DMS.Auth;
 using DMS.Autofac;
 using DMS.NLogs.Filters;
 using DMS.Redis.Configurations;
 using DMS.Swagger;
-using DMSN.Common.Configurations;
+using DMSN.Common.CoreExtensions.ConfigExtensions;
 using DMSN.Common.Helper;
 using DMSN.Common.JsonHandler.JsonConverters;
+using Freesql.Template.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace Freesql.Template
 {
@@ -26,10 +23,6 @@ namespace Freesql.Template
     /// </summary>
     public class Startup
     {
-        /// <summary>
-        /// 
-        /// </summary>
-        public IFreeSql Fsql { get; }
         /// <summary>
         /// 
         /// </summary>
@@ -48,25 +41,6 @@ namespace Freesql.Template
             .AddJsonFile($"appsettings.json", optional: true, reloadOnChange: true)
             .AddAppSettingsFile($"appsettings.{env.EnvironmentName}.json", optional: true, reloadOnChange: true);
             Configuration = builder.Build();
-
-
-            Fsql = new FreeSql.FreeSqlBuilder()
-               //.UseConnectionString(FreeSql.DataType.SqlServer, @"Data Source=192.168.31.201;User Id=devuser;Password=yxw-88888;Initial Catalog=trydou_sys;Pooling=true;Min Pool Size=1")
-               .UseConnectionString(FreeSql.DataType.MySql, Configuration.GetConnectionString("trydou_sys_master"))
-              //.UseAutoSyncStructure(true)
-              .Build();
-
-            Fsql.Aop.CurdAfter += (s, e) =>
-            {
-                if (e.ElapsedMilliseconds > 200)
-                {
-                    //记录日志
-                    //发送短信给负责人
-                    DMS.NLogs.Logger.Error($"Exception={e.Exception.Message},StackTrace={e.Exception.StackTrace},sql={e.Sql}");
-                    throw new NotImplementedException();
-                }
-            };
-
         }
 
 
@@ -88,12 +62,10 @@ namespace Freesql.Template
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSwaggerGenV2();
-
-            #region AddDbContext
-            services.AddSingleton<IFreeSql>(Fsql);
-            #endregion
+            services.AddFreesqlSetup(Configuration);
+            services.AddRedisSetup();
+            services.AddHttpContextSetup();
         }
 
         /// <summary>
@@ -109,7 +81,6 @@ namespace Freesql.Template
                 app.UseDeveloperExceptionPage();
                 app.UseSwaggerUIV2(DebugHelper.IsDebug(GetType()));
             }
-            app.UseStaticHttpContext();
 
 
             app.UseRouting();

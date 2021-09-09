@@ -9,11 +9,12 @@
             
             </summary>
         </member>
-        <member name="M:Freesql.Template.Controllers.JobLogController.#ctor(Freesql.Template.Contracts.ISysJobLogService)">
+        <member name="M:Freesql.Template.Controllers.JobLogController.#ctor(Freesql.Template.Contracts.ISysJobLogService,DMS.Auth.IUserAuth)">
             <summary>
             
             </summary>
             <param name="jobLogService"></param>
+            <param name="userAuth"></param>
         </member>
         <member name="M:Freesql.Template.Controllers.JobLogController.AddAsync(Freesql.Template.Contracts.Param.AddJobLogParam)">
             <summary>
@@ -101,11 +102,6 @@
             <returns></returns>
         </member>
         <member name="T:Freesql.Template.Startup">
-            <summary>
-            
-            </summary>
-        </member>
-        <member name="P:Freesql.Template.Startup.Fsql">
             <summary>
             
             </summary>

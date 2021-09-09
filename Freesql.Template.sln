@@ -3,21 +3,23 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31605.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template", "Freesql.Template\Freesql.Template.csproj", "{D8BC13F9-7696-4336-8B94-DC3B06F7941E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freesql.Template", "Freesql.Template\Freesql.Template.csproj", "{D8BC13F9-7696-4336-8B94-DC3B06F7941E}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Common", "00.Common", "{C0604B85-FA8F-4BB2-B607-C59415E33EB0}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template.Enum", "Freesql.Template.Enum\Freesql.Template.Enum.csproj", "{3DA01566-AB25-4301-9B6A-1FC183E4E7B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freesql.Template.Enum", "Freesql.Template.Enum\Freesql.Template.Enum.csproj", "{3DA01566-AB25-4301-9B6A-1FC183E4E7B9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01.Entity", "01.Entity", "{187C88BF-D17B-455E-9B1B-626B81C96BB0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02.Service", "02.Service", "{84C5A1BF-E1F8-4DAF-82C8-2D4B23DF7E2B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template.Entities", "Freesql.Template.Entities\Freesql.Template.Entities.csproj", "{C946FD77-B449-4905-B036-12C3ECDA123F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freesql.Template.Entities", "Freesql.Template.Entities\Freesql.Template.Entities.csproj", "{C946FD77-B449-4905-B036-12C3ECDA123F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template.Contracts", "Freesql.Template.Contracts\Freesql.Template.Contracts.csproj", "{659157A3-58D9-4000-B9A9-53E75EFE60E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freesql.Template.Contracts", "Freesql.Template.Contracts\Freesql.Template.Contracts.csproj", "{659157A3-58D9-4000-B9A9-53E75EFE60E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template.Service", "Freesql.Template.Service\Freesql.Template.Service.csproj", "{05F767EE-388D-4EEB-BF95-BD35C3630510}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Freesql.Template.Service", "Freesql.Template.Service\Freesql.Template.Service.csproj", "{05F767EE-388D-4EEB-BF95-BD35C3630510}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "00.Extensions", "00.Extensions", "{AD605AAA-B5F0-419F-BF42-B4AB25A88E4D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Freesql.Template.Extensions", "Freesql.Template.Extensions\Freesql.Template.Extensions.csproj", "{09104092-536E-4FB0-9EB0-766AAB3897AA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,15 +47,20 @@ Global
 		{05F767EE-388D-4EEB-BF95-BD35C3630510}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{05F767EE-388D-4EEB-BF95-BD35C3630510}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{05F767EE-388D-4EEB-BF95-BD35C3630510}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09104092-536E-4FB0-9EB0-766AAB3897AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09104092-536E-4FB0-9EB0-766AAB3897AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09104092-536E-4FB0-9EB0-766AAB3897AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09104092-536E-4FB0-9EB0-766AAB3897AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{3DA01566-AB25-4301-9B6A-1FC183E4E7B9} = {C0604B85-FA8F-4BB2-B607-C59415E33EB0}
+		{3DA01566-AB25-4301-9B6A-1FC183E4E7B9} = {AD605AAA-B5F0-419F-BF42-B4AB25A88E4D}
 		{C946FD77-B449-4905-B036-12C3ECDA123F} = {187C88BF-D17B-455E-9B1B-626B81C96BB0}
 		{659157A3-58D9-4000-B9A9-53E75EFE60E4} = {84C5A1BF-E1F8-4DAF-82C8-2D4B23DF7E2B}
 		{05F767EE-388D-4EEB-BF95-BD35C3630510} = {84C5A1BF-E1F8-4DAF-82C8-2D4B23DF7E2B}
+		{09104092-536E-4FB0-9EB0-766AAB3897AA} = {AD605AAA-B5F0-419F-BF42-B4AB25A88E4D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {87F4E6F3-1E63-4F7A-A966-35BE39D152C8}
