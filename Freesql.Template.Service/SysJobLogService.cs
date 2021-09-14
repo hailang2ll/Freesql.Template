@@ -17,15 +17,11 @@ namespace Freesql.Template.Service
     /// </summary>
     public class SysJobLogService : ISysJobLogService
     {
-        public RedisManager redisManager = null;
         public IFreeSql fsql;
         public SysJobLogService(IFreeSql freeSql)
         {
             fsql = freeSql;
-            if (redisManager == null)
-            {
-                redisManager = new RedisManager(0);
-            }
+           
         }
         public async Task<ResponseResult> AddAsync(AddJobLogParam param)
         {

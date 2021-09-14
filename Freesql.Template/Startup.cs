@@ -1,6 +1,7 @@
 using Autofac;
 using DMS.Auth;
 using DMS.Autofac;
+using DMS.Extensions.ServiceExtensions;
 using DMS.NLogs.Filters;
 using DMS.Redis.Configurations;
 using DMS.Swagger;
@@ -10,11 +11,9 @@ using DMSN.Common.JsonHandler.JsonConverters;
 using Freesql.Template.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System;
 
 namespace Freesql.Template
 {
@@ -62,10 +61,11 @@ namespace Freesql.Template
                 options.JsonSerializerOptions.PropertyNamingPolicy = null;
                 options.JsonSerializerOptions.DictionaryKeyPolicy = null;
             });
-            services.AddSwaggerGenV2();
             services.AddFreesqlSetup(Configuration);
-            services.AddRedisSetup();
+            services.AddSwaggerGenV2();
             services.AddHttpContextSetup();
+            services.AddRedisSetup();
+            services.AddAuthSetup();
         }
 
         /// <summary>
@@ -79,9 +79,8 @@ namespace Freesql.Template
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-                app.UseSwaggerUIV2(DebugHelper.IsDebug(GetType()));
             }
-
+            app.UseSwaggerUIV2(DebugHelper.IsDebug(GetType()));
 
             app.UseRouting();
             app.UseAuthorization();
