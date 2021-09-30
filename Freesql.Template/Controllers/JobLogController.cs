@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Freesql.Template.Controllers
 {
     /// <summary>
-    /// 
+    /// 工作日志
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]

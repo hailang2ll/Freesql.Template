@@ -6,7 +6,7 @@
     <members>
         <member name="T:Freesql.Template.Controllers.JobLogController">
             <summary>
-            
+            工作日志
             </summary>
         </member>
         <member name="M:Freesql.Template.Controllers.JobLogController.#ctor(Freesql.Template.Contracts.ISysJobLogService,DMS.Auth.IUserAuth)">
